@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "../proto";
+
+service CheckInService {
+  rpc CheckIn(CheckInRequest) returns (CheckInReply) {}
+}
+
+message CheckInRequest { uint64 user_id = 1; }
+
+message CheckInReply {
+  bool success = 1;
+  int64 continuous_days = 2;
+}
